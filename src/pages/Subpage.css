@@ -1,0 +1,182 @@
+/* Subpage hero (Services / About / Contact) */
+.subpage-hero {
+  padding: calc(var(--header-h) + 80px) 0 56px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.subpage-title {
+  margin-top: 16px;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: -0.025em;
+}
+.subpage-sub {
+  margin-top: 14px;
+  font-size: var(--fs-md);
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+/* ----- Services list ----- */
+.service-detail-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 720px) {
+  .service-detail-list { grid-template-columns: repeat(2, 1fr); }
+}
+.service-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px;
+}
+.service-detail-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: #fff;
+}
+.service-detail-body { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.service-detail h3 {
+  font-size: var(--fs-xl);
+}
+.service-detail p {
+  color: var(--ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+.service-detail .btn { margin-top: 6px; }
+
+/* ----- About ----- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.about-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+.about-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--eicher-red-soft);
+  color: var(--eicher-red-deep);
+}
+.about-card h3 { font-size: var(--fs-xl); }
+.about-card p { color: var(--ink-soft); font-size: var(--fs-sm); line-height: 1.6; }
+
+/* ----- Contact ----- */
+.contact-call {
+  padding: 40px;
+  text-align: center;
+  background: var(--paper);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.contact-label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+.contact-number {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 36px;
+  border-radius: var(--r-lg);
+  background: var(--ink);
+  color: #fff;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: var(--font-display);
+  transition: background .2s ease, transform .2s ease;
+}
+.contact-number:hover { background: var(--eicher-red-deep); transform: translateY(-2px); }
+.contact-number-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: calc(var(--r-lg) + 8px);
+  border: 2px solid var(--eicher-red);
+  animation: ringPulse 1.8s ease-out infinite;
+}
+.contact-number-text { position: relative; z-index: 1; }
+.contact-hint { color: var(--ink-soft); font-size: var(--fs-sm); max-width: 520px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (min-width: 720px) {
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .contact-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  text-align: left;
+  color: inherit;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.contact-channel:hover { transform: translateY(-2px); border-color: var(--ink-mute); box-shadow: var(--shadow-2); }
+.contact-channel-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--eicher-red);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-channel-label {
+  display: block;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.contact-channel strong {
+  display: block;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.card-pad { padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.contact-area p { color: var(--ink-soft); font-size: var(--fs-sm); }

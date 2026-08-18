@@ -1,0 +1,105 @@
+{
+  "brand": {
+    "name": "Tuty Packers and Movers",
+    "short": "Tuty Packers",
+    "tagline": "Thoothukudi's trusted Eicher-only moving crew."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "callNow": "Call now",
+    "callPrimary": "Call +91 80566 86614",
+    "whatsapp": "WhatsApp",
+    "viewAll": "View all",
+    "available": "Available on request",
+    "learnMore": "Learn more",
+    "open24x7": "Dispatch 24×7",
+    "headquarters": "Headquartered in Thoothukudi"
+  },
+  "hero": {
+    "eyebrow": "Packers & Movers · Thoothukudi",
+    "title": "Moving homes, offices and vehicles — across India.",
+    "subtitle": "Eicher-only fleet, transparent pricing, dispatch 24×7. One number, one crew.",
+    "primaryCta": "Call +91 80566 86614",
+    "secondaryCta": "View services"
+  },
+  "home": {
+    "fleetTitle": "Our fleet is 100% Eicher.",
+    "fleetSubtitle": "Two configurations, every Eicher. Open body with fitted tarpaulin sheet for short hauls, closed container for long hauls and delicate loads.",
+    "servicesTitle": "What we move.",
+    "servicesSubtitle": "From a single carton to an entire office, we handle the heavy lifting end-to-end.",
+    "areaTitle": "Where we go.",
+    "areaSubtitle": "Out of Thoothukudi, into anywhere in India.",
+    "whyTitle": "Why Tuty Packers.",
+    "whySubtitle": "Three reasons customers call us back.",
+    "why1Title": "Eicher-only fleet",
+    "why1Body": "Every truck under our banner is an Eicher — the same chassis, the same trained drivers, the same predictable service.",
+    "why2Title": "Transparent pricing",
+    "why2Body": "Quotes by distance, load, and vehicle — not by guesswork. No last-minute surprises.",
+    "why3Title": "Dispatch 24×7",
+    "why3Body": "Need to move at 2am on a Sunday? We answer. Trucks roll.",
+    "ctaTitle": "One call does it all.",
+    "ctaSubtitle": "Speak to a real person in seconds. Estimate, schedule, dispatch — all on one line.",
+    "ctaButton": "Call +91 80566 86614"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Packing, loading, transit, unloading and unpacking — end-to-end.",
+    "household": {
+      "name": "Household shifting",
+      "desc": "Full-service home relocation. We pack, load, transit, unload and unpack. Kitchen, wardrobe, fragile items — handled with care."
+    },
+    "office": {
+      "name": "Office relocation",
+      "desc": "IT handling, weekend slots, and a relocation plan that keeps your team productive. From workstation to server rack."
+    },
+    "vehicle": {
+      "name": "Vehicle transport",
+      "desc": "Bikes and cars on enclosed carriers. Door-to-door delivery with insurance on request."
+    },
+    "packing": {
+      "name": "Packing only",
+      "desc": "Boxes, bubble wrap, foam and labour. We come to you, pack, and leave you ready to move."
+    },
+    "cta": "Call to enquire"
+  },
+  "about": {
+    "title": "About Tuty Packers",
+    "subtitle": "A Thoothukudi business built on referrals, repeat customers and Eicher trucks.",
+    "storyTitle": "Our story",
+    "story": "We started small — a single Eicher, a couple of drivers, and a list of customers who'd call back. Word travelled faster than the trucks did. Today we still run a tight Eicher-only fleet, and the list of phone numbers that ring the moment a move is planned keeps growing.",
+    "fleetTitle": "Why Eicher, always",
+    "fleetBody": "Eicher means one thing to us: predictability. Same chassis, same parts, same trained drivers. When you book us, you don't roll the dice on a stranger's truck — you get one we own and maintain.",
+    "valuesTitle": "How we work",
+    "valuesBody": "Upfront quotes. Honest ETAs. Real people on the phone at 2am when a long-haul needs to roll. We don't subcontract — our drivers are our drivers."
+  },
+  "contact": {
+    "title": "One call does it all.",
+    "subtitle": "Estimate, schedule, dispatch — all on one line.",
+    "primaryLabel": "Tap to call",
+    "primary": "+91 80566 86614",
+    "primaryHint": "Mobile: tap to dial. Desktop: copy and dial.",
+    "whatsappLabel": "WhatsApp",
+    "whatsapp": "Message us on WhatsApp",
+    "hoursLabel": "Dispatch hours",
+    "hours": "24 hours · 7 days",
+    "addressLabel": "Headquarters",
+    "address": "Thoothukudi, Tamil Nadu — 628001",
+    "areaLabel": "Service area",
+    "area": "All-India. Daily service across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telangana."
+  },
+  "footer": {
+    "tagline": "Packers & Movers from Thoothukudi — moving you anywhere in India.",
+    "call": "Call",
+    "service": "Service",
+    "company": "Company",
+    "rights": "All rights reserved."
+  },
+  "ta": {
+    "switch": "EN"
+  }
+}

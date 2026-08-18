@@ -1,0 +1,18 @@
+[
+  {
+    "id": "household",
+    "icon": "home"
+  },
+  {
+    "id": "office",
+    "icon": "briefcase"
+  },
+  {
+    "id": "vehicle",
+    "icon": "truck"
+  },
+  {
+    "id": "packing",
+    "icon": "package"
+  }
+]

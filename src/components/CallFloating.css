@@ -1,0 +1,26 @@
+.call-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--eicher-red);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(200, 16, 46, 0.35);
+  z-index: 60;
+}
+.call-fab:hover { background: var(--eicher-red-deep); }
+.call-fab-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--eicher-red);
+  animation: ringPulse 1.8s ease-out infinite;
+}
+@media (min-width: 900px) {
+  .call-fab { right: 28px; bottom: 28px; width: 60px; height: 60px; }
+}
