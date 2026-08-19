@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import CallFloating from './components/CallFloating.jsx';
 import PageTransition from './components/PageTransition.jsx';
+import Loader from './components/Loader.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import About from './pages/About.jsx';
@@ -12,8 +14,24 @@ import Contact from './pages/Contact.jsx';
 
 export default function App() {
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const minDelay = new Promise((resolve) => setTimeout(resolve, 1100));
+    const pageReady = document.readyState === 'complete'
+      ? Promise.resolve()
+      : new Promise((resolve) => window.addEventListener('load', resolve, { once: true }));
+    Promise.all([minDelay, pageReady]).then(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = loading ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [loading]);
+
   return (
     <>
+      <Loader visible={loading} />
       <Header />
       <main>
         <AnimatePresence mode="wait">

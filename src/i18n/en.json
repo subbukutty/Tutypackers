@@ -4,6 +4,9 @@
     "short": "Tuty Packers",
     "tagline": "Thoothukudi's trusted packers and movers — any vehicle, any size."
   },
+  "loader": {
+    "name": "Thoothukudi Packers"
+  },
   "meta": {
     "home": {
       "title": "Tuty Packers and Movers — Thoothukudi | Any Vehicle, Any Size",

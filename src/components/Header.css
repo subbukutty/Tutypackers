@@ -33,10 +33,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  overflow: hidden;
+  flex-shrink: 0;
 }
 .brand-name {
   font-weight: 700;

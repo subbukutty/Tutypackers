@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import LanguageToggle from './LanguageToggle.jsx';
+import BrandMark from './BrandMark.jsx';
 import contact from '../content/contact.json';
 import './Footer.css';
 
@@ -14,14 +15,7 @@ export default function Footer() {
       <div className="container site-footer-inner">
         <div className="footer-col footer-brand">
           <div className="brand">
-            <span className="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" width="32" height="32">
-                <rect width="32" height="32" rx="7" fill="var(--eicher-red)" />
-                <text x="16" y="20" textAnchor="middle"
-                      fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif"
-                      fontSize="12" fontWeight="800" fill="#fff" letterSpacing="1">TP</text>
-              </svg>
-            </span>
+            <BrandMark size={32} />
             <span className="brand-name">{t('brand.name')}</span>
           </div>
           <p className="footer-tag">{t('footer.tagline')}</p>
