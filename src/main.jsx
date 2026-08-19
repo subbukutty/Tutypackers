@@ -8,7 +8,7 @@ import './i18n';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/tutypackers-website">
+    <BrowserRouter basename="/Tutypackers">
       <App />
     </BrowserRouter>
   </React.StrictMode>
