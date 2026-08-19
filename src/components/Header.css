@@ -45,6 +45,14 @@
   color: var(--ink);
   white-space: nowrap;
 }
+/* Full name by default; below ~480px there isn't room for it alongside the
+   call button and hamburger, so fall back to the short form — the brand
+   name itself must never fully disappear, at any screen size. */
+.brand-name-short { display: none; }
+@media (max-width: 480px) {
+  .brand-name-full { display: none; }
+  .brand-name-short { display: inline; }
+}
 
 .site-nav {
   display: flex;
@@ -91,7 +99,6 @@
 
 @media (max-width: 960px) {
   .site-nav { display: none; }
-  .brand-name { display: none; }
   .site-actions-desktop { display: none; }
   .menu-toggle { display: inline-flex; }
 }
@@ -117,10 +124,20 @@
 
 @media (min-width: 961px) and (max-width: 1240px) {
   :lang(ta) .site-nav { display: none; }
-  :lang(ta) .brand-name { display: none; }
   :lang(ta) .site-actions-desktop { display: none; }
   :lang(ta) .menu-toggle { display: inline-flex; }
   :lang(ta) .mobile-nav-panel { display: block; }
+}
+/* Tamil's full/short brand strings are both longer than English's, so the
+   short-form swap needs to kick in earlier. */
+@media (max-width: 620px) {
+  :lang(ta) .brand-name-full { display: none; }
+  :lang(ta) .brand-name-short { display: inline; }
+}
+@media (max-width: 300px) {
+  .brand { gap: 6px; }
+  .site-header-inner { gap: 8px; }
+  .site-actions { gap: 6px; }
 }
 
 /* ---------------- Mobile nav panel ---------------- */

@@ -88,7 +88,10 @@ export default function Header() {
                     fontSize="12" fontWeight="800" fill="#fff" letterSpacing="1">TP</text>
             </svg>
           </span>
-          <span className="brand-name">{t('brand.name')}</span>
+          <span className="brand-name">
+            <span className="brand-name-full">{t('brand.name')}</span>
+            <span className="brand-name-short">{t('brand.short')}</span>
+          </span>
         </Link>
 
         <nav className="site-nav" aria-label="Primary">
