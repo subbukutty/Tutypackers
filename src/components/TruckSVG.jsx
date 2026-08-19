@@ -1,4 +1,4 @@
-// Inline SVG illustrations of three Eicher-style truck configurations.
+// Inline SVG illustrations of common truck body configurations.
 // Stroke-driven, no raster assets — keeps the bundle tiny and the lines crisp.
 
 const baseProps = {
@@ -148,8 +148,8 @@ export function HeroTruck({ className }) {
         <line x1="90" y1="0" x2="370" y2="0" stroke="#8B0A1F" strokeWidth="3"/>
 
         {/* brand */}
-        <text x="60" y="80" fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif"
-              fontSize="14" fontWeight="800" fill="#C8102E" letterSpacing="2">EICHER</text>
+        <text x="230" y="64" textAnchor="middle" fontFamily="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif"
+              fontSize="22" fontWeight="800" fill="#C8102E" letterSpacing="1">TUTY PACKERS</text>
 
         {/* wheels */}
         <circle cx="22" cy="124" r="16" fill="#1a1a1a"/>

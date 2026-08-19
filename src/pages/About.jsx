@@ -2,7 +2,24 @@ import { useTranslation } from 'react-i18next';
 import { Phone, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import contact from '../content/contact.json';
+import truckClosedSide from '../assets/truck-closed-side.jpeg';
+import truckCabFront from '../assets/truck-cab-front.jpeg';
+import truckOpenFront from '../assets/truck-open-front.jpeg';
+import truckOpenStakeSide from '../assets/truck-open-stake-side.jpeg';
+import truckTarpLoadedNight from '../assets/truck-tarp-loaded-night.jpeg';
+import packedBoxesDoorway from '../assets/packed-boxes-doorway.jpeg';
+import containerLoadedInterior from '../assets/container-loaded-interior.jpeg';
 import './Subpage.css';
+
+const GALLERY = [
+  { src: truckClosedSide, key: 'truckClosedSide' },
+  { src: truckOpenFront, key: 'truckOpenFront' },
+  { src: truckTarpLoadedNight, key: 'truckTarpLoadedNight' },
+  { src: containerLoadedInterior, key: 'containerLoadedInterior' },
+  { src: packedBoxesDoorway, key: 'packedBoxesDoorway' },
+  { src: truckCabFront, key: 'truckCabFront' },
+  { src: truckOpenStakeSide, key: 'truckOpenStakeSide' },
+];
 
 export default function About() {
   const { t } = useTranslation();
@@ -49,6 +66,29 @@ export default function About() {
       </section>
 
       <section className="section section-paper">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-head">
+              <span className="eyebrow">{t('about.galleryEyebrow')}</span>
+              <h2 className="section-title">{t('about.galleryTitle')}</h2>
+              <p className="section-subtitle">{t('about.gallerySubtitle')}</p>
+            </div>
+          </SectionReveal>
+
+          <div className="about-gallery-grid">
+            {GALLERY.map((g, idx) => (
+              <SectionReveal key={g.key} delay={0.05 * idx}>
+                <figure className="gallery-tile">
+                  <img src={g.src} alt={t(`about.gallery.${g.key}`)} loading="lazy" />
+                  <figcaption>{t(`about.gallery.${g.key}`)}</figcaption>
+                </figure>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-cream">
         <div className="container cta-inner" style={{ marginTop: 0 }}>
           <SectionReveal>
             <div className="cta-copy">

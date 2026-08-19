@@ -2,7 +2,7 @@
   "brand": {
     "name": "Tuty Packers and Movers",
     "short": "Tuty Packers",
-    "tagline": "Thoothukudi's trusted Eicher-only moving crew."
+    "tagline": "Thoothukudi's trusted packers and movers — any vehicle, any size."
   },
   "nav": {
     "home": "Home",
@@ -20,36 +20,49 @@
     "learnMore": "Learn more",
     "open24x7": "Dispatch 24×7",
     "headquarters": "Headquartered in Thoothukudi",
-    "eicherFleet": "100% Eicher fleet"
+    "anyVehicle": "Any vehicle, any size"
   },
   "hero": {
     "eyebrow": "Packers & Movers · Thoothukudi",
     "title": "Moving homes, offices and vehicles — across India.",
-    "subtitle": "Eicher-only fleet, transparent pricing, dispatch 24×7. One number, one crew.",
+    "subtitle": "Any vehicle size, transparent pricing, dispatch 24×7. One number, one crew.",
     "primaryCta": "Call +91 80566 86614",
     "secondaryCta": "View services"
   },
   "home": {
     "fleetEyebrow": "Fleet",
-    "fleetTitle": "Our fleet is 100% Eicher.",
-    "fleetSubtitle": "Two configurations, every Eicher. Open body with fitted tarpaulin sheet for short hauls, closed container for long hauls and delicate loads.",
+    "fleetTitle": "Any vehicle, any size.",
+    "fleetSubtitle": "We source the right vehicle through trusted transport partners — open body with tarpaulin sheet for short hauls, closed container for long hauls and delicate loads.",
     "fleetCards": {
       "open": {
-        "title": "Eicher Open Body · Tarpaulin Sheet",
+        "title": "Open Body Truck · Tarpaulin Sheet",
         "points": [
-          "Open-body Eicher fitted with a tarpaulin sheet as standard.",
+          "Open-body truck fitted with a tarpaulin sheet as standard.",
           "Sheet-on cover protects furniture from rain, dust and sun on short hauls.",
           "Quick to load — best for same-day and short-distance moves."
         ]
       },
       "closed": {
-        "title": "Eicher Closed Container",
+        "title": "Closed Container Truck",
         "points": [
           "Fully enclosed container body — dust, rain and theft resistant.",
           "Default for long hauls and delicate loads (electronics, antiques, glass).",
           "Lockable rear door; cargo strapped and padded for the run."
         ]
       }
+    },
+    "vehicleEyebrow": "Vehicles",
+    "vehicleTitle": "Any size, any load.",
+    "vehicleSubtitle": "From a mini pickup to a 21 ft container — we arrange the right vehicle through trustable transport partners near you.",
+    "vehicleSizes": {
+      "tataAce": "Tata Ace",
+      "dost": "Dost",
+      "badaDost": "Bada Dost",
+      "tata407": "Tata 407",
+      "ft14": "14 ft Truck",
+      "ft17": "17 ft Truck",
+      "ft19": "19 ft Truck",
+      "ft21container": "21 ft Container"
     },
     "servicesTitle": "What we move.",
     "servicesSubtitle": "From a single carton to an entire office, we handle the heavy lifting end-to-end.",
@@ -80,8 +93,8 @@
     "whyEyebrow": "Why us",
     "whyTitle": "Why Tuty Packers.",
     "whySubtitle": "Three reasons customers call us back.",
-    "why1Title": "Eicher-only fleet",
-    "why1Body": "Every truck under our banner is an Eicher — the same chassis, the same trained drivers, the same predictable service.",
+    "why1Title": "Any vehicle, sourced fast",
+    "why1Body": "Tata Ace to 21 ft container — we tap our network of trustable transport partners to match the right vehicle to your move, fast.",
     "why2Title": "Transparent pricing",
     "why2Body": "Quotes by distance, load, and vehicle — not by guesswork. No last-minute surprises.",
     "why3Title": "Dispatch 24×7",
@@ -113,13 +126,25 @@
   },
   "about": {
     "title": "About Tuty Packers",
-    "subtitle": "A Thoothukudi business built on referrals, repeat customers and Eicher trucks.",
+    "subtitle": "A Thoothukudi business built on referrals, repeat customers and a trusted transport network.",
     "storyTitle": "Our story",
-    "story": "We started small — a single Eicher, a couple of drivers, and a list of customers who'd call back. Word travelled faster than the trucks did. Today we still run a tight Eicher-only fleet, and the list of phone numbers that ring the moment a move is planned keeps growing.",
-    "fleetTitle": "Why Eicher, always",
-    "fleetBody": "Eicher means one thing to us: predictability. Same chassis, same parts, same trained drivers. When you book us, you don't roll the dice on a stranger's truck — you get one we own and maintain.",
+    "story": "We started small — a single truck, a couple of drivers, and a list of customers who'd call back. Word travelled faster than the trucks did. Today we tap a trustable network of transport partners for any vehicle size, and the list of phone numbers that ring the moment a move is planned keeps growing.",
+    "fleetTitle": "Why our transport network",
+    "fleetBody": "We work only with vetted, trustable transport partners across Thoothukudi. Whatever the load — a single carton or a full house — we match it to the right vehicle size, so you never pay for more truck than you need.",
     "valuesTitle": "How we work",
-    "valuesBody": "Upfront quotes. Honest ETAs. Real people on the phone at 2am when a long-haul needs to roll. We don't subcontract — our drivers are our drivers."
+    "valuesBody": "Upfront quotes. Honest ETAs. Real people on the phone at 2am when a long-haul needs to roll. We don't subcontract — our drivers are our drivers.",
+    "galleryEyebrow": "Gallery",
+    "galleryTitle": "Real moves, real trucks.",
+    "gallerySubtitle": "No stock photos — this is our fleet and our crews, on the job.",
+    "gallery": {
+      "truckClosedSide": "Our closed container truck, liveried and ready to roll",
+      "truckOpenFront": "Open-body truck at the yard, roof rack loaded",
+      "truckTarpLoadedNight": "Tarpaulin sheet roped down over a night dispatch",
+      "containerLoadedInterior": "Inside the container — wrapped, padded and secured",
+      "packedBoxesDoorway": "Packed and staged at the doorway before loading",
+      "truckCabFront": "Door-to-door delivery, IBA-approved billing",
+      "truckOpenStakeSide": "Stake-body truck, ready for the next load"
+    }
   },
   "testimonials": {
     "title": "Customer thoughts",

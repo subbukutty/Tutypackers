@@ -29,6 +29,16 @@ const LOCAL_TOWN_KEYS = [
   'kayalpattinam',
   'sawyerpuram',
 ];
+const VEHICLE_SIZE_KEYS = [
+  'tataAce',
+  'dost',
+  'badaDost',
+  'tata407',
+  'ft14',
+  'ft17',
+  'ft19',
+  'ft21container',
+];
 const COVERAGE_MAP_SRC =
   `https://www.google.com/maps?q=${contact.hq.lat},${contact.hq.lng}&z=10&output=embed`;
 
@@ -98,7 +108,7 @@ export default function Home() {
           >
             <span><ShieldCheck size={14} /> {t('common.headquarters')}</span>
             <span><Clock4 size={14} /> {t('common.open24x7')}</span>
-            <span><Truck size={14} /> {t('common.eicherFleet')}</span>
+            <span><Truck size={14} /> {t('common.anyVehicle')}</span>
           </motion.div>
         </div>
       </section>
@@ -125,6 +135,27 @@ export default function Home() {
             ))}
             {/* Empty third grid cell keeps the two cards visually centred (single card on each side) */}
             <div aria-hidden="true" className="fleet-empty" />
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- VEHICLE SIZES ---------------- */}
+      <section className="section section-cream-2">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-head">
+              <span className="eyebrow"><Truck size={12} /> {t('home.vehicleEyebrow')}</span>
+              <h2 className="section-title">{t('home.vehicleTitle')}</h2>
+              <p className="section-subtitle">{t('home.vehicleSubtitle')}</p>
+            </div>
+          </SectionReveal>
+
+          <div className="area-grid vehicle-grid">
+            {VEHICLE_SIZE_KEYS.map((v, idx) => (
+              <SectionReveal key={v} delay={0.04 * idx}>
+                <div className="area-tile">{t(`home.vehicleSizes.${v}`)}</div>
+              </SectionReveal>
+            ))}
           </div>
         </div>
       </section>
