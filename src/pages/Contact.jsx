@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Phone, MessageCircle, MapPin, Clock, Copy, Check } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Clock, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import contact from '../content/contact.json';
@@ -86,6 +86,16 @@ export default function Contact() {
                   <strong>{t('contact.address')}</strong>
                 </div>
               </div>
+            </SectionReveal>
+
+            <SectionReveal delay={0.25}>
+              <a href={`mailto:${contact.email}`} className="card contact-channel contact-channel-wide">
+                <span className="contact-channel-icon"><Mail size={22} /></span>
+                <div>
+                  <span className="contact-channel-label">{t('contact.emailLabel')}</span>
+                  <strong>{contact.email}</strong>
+                </div>
+              </a>
             </SectionReveal>
           </div>
 

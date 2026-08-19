@@ -89,7 +89,7 @@
 }
 .menu-toggle:hover { background: rgba(0, 0, 0, 0.04); }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .site-nav { display: none; }
   .brand-name { display: none; }
   .site-actions-desktop { display: none; }
@@ -97,7 +97,27 @@
 }
 @media (max-width: 420px) {
   .header-cta-label { display: none; }
-  .header-cta { width: 40px; padding: 0; }
+  .header-cta { width: 40px; height: 40px; padding: 0; flex-shrink: 0; }
+  .header-cta svg { width: 20px; height: 20px; }
+}
+
+/* Tamil strings run longer than English. Even the compact desktop nav
+   (measured ~1183px of content) doesn't fit until ~1200px, so Tamil gets
+   its own wider hamburger threshold, plus tightening above that so the
+   call button keeps clear room. */
+:lang(ta) .site-header-inner { gap: 12px; }
+:lang(ta) .brand-name { font-size: 15px; }
+:lang(ta) .site-nav { gap: 2px; }
+:lang(ta) .nav-link { padding: 0 10px; font-size: 13px; }
+:lang(ta) .header-cta { padding: 0 14px; }
+:lang(ta) .header-cta-label { font-size: 13px; }
+
+@media (min-width: 961px) and (max-width: 1240px) {
+  :lang(ta) .site-nav { display: none; }
+  :lang(ta) .brand-name { display: none; }
+  :lang(ta) .site-actions-desktop { display: none; }
+  :lang(ta) .menu-toggle { display: inline-flex; }
+  :lang(ta) .mobile-nav-panel { display: block; }
 }
 
 /* ---------------- Mobile nav panel ---------------- */
@@ -113,7 +133,7 @@
   display: none;
 }
 .site-header.is-menu-open { background: var(--cream); border-bottom-color: var(--line); }
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .mobile-nav-panel { display: block; }
 }
 .mobile-nav-links {

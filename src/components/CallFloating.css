@@ -12,8 +12,16 @@
   color: #fff;
   box-shadow: 0 10px 30px rgba(200, 16, 46, 0.35);
   z-index: 60;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .2s ease, transform .2s ease;
 }
 .call-fab:hover { background: var(--eicher-red-deep); }
+.call-fab.is-hidden {
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+}
 .call-fab-ring {
   position: absolute;
   inset: 0;

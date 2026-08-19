@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Phone, ShieldCheck, Truck, Wrench } from 'lucide-react';
+import { Phone, Mail, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import contact from '../content/contact.json';
 import ceoPortrait from '../assets/ceo-portrait.jpeg';
@@ -51,6 +51,10 @@ export default function About() {
               <div className="founder-body">
                 <strong className="founder-name">{t('about.founderName')}</strong>
                 <span className="founder-title">{t('about.founderRole')}</span>
+                <a href={`mailto:${contact.email}`} className="founder-email">
+                  <Mail size={14} strokeWidth={2.4} />
+                  {contact.email}
+                </a>
                 <p className="founder-quote">{t('about.founderBio')}</p>
               </div>
             </div>

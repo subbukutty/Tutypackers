@@ -187,8 +187,18 @@
   font-size: var(--fs-sm);
   line-height: 1.6;
 }
+.founder-email {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--eicher-red);
+}
+.founder-email:hover { color: var(--eicher-red-deep); }
 @media (max-width: 560px) {
-  .founder-card { flex-direction: column; text-align: center; padding: 28px 20px; }
+  .founder-card { flex-direction: column; text-align: center; padding: 28px 20px 40px; }
 }
 
 /* ----- Gallery ----- */
@@ -294,6 +304,7 @@
 @media (min-width: 1000px) {
   .contact-grid { grid-template-columns: repeat(4, 1fr); }
 }
+.contact-channel-wide { grid-column: 1 / -1; }
 .contact-channel {
   display: flex;
   align-items: center;

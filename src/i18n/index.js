@@ -25,4 +25,9 @@ i18n
     returnObjects: true,
   });
 
+// Keep <html lang> in sync so screen readers and :lang() CSS track the active language.
+const syncHtmlLang = (lng) => { document.documentElement.lang = lng; };
+syncHtmlLang(i18n.resolvedLanguage || i18n.language);
+i18n.on('languageChanged', syncHtmlLang);
+
 export default i18n;

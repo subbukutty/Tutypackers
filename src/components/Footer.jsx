@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import LanguageToggle from './LanguageToggle.jsx';
 import contact from '../content/contact.json';
 import './Footer.css';
@@ -52,6 +52,10 @@ export default function Footer() {
             <li>
               <Phone size={14} />
               <a href={`tel:${contact.phoneE164}`}>{contact.phone}</a>
+            </li>
+            <li>
+              <Mail size={14} />
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </li>
             <li>
               <MapPin size={14} />
