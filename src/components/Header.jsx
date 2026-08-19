@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,6 +12,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const menuToggleRef = useRef(null);
+  const panelRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -29,6 +31,41 @@ export default function Header() {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  // Move focus into the panel on open, and handle Escape-to-close + a basic
+  // Tab trap so keyboard users can't tab out into hidden page content.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const panel = panelRef.current;
+    const focusables = panel
+      ? Array.from(panel.querySelectorAll('a[href], button:not([disabled])'))
+      : [];
+    focusables[0]?.focus();
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setMenuOpen(false);
+        menuToggleRef.current?.focus();
+        return;
+      }
+      if (e.key === 'Tab' && focusables.length > 0) {
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
   const navItems = [
@@ -76,6 +113,7 @@ export default function Header() {
             <span className="header-cta-label">{t('common.callNow')}</span>
           </a>
           <button
+            ref={menuToggleRef}
             type="button"
             className="menu-toggle"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -92,6 +130,7 @@ export default function Header() {
         {menuOpen && (
           <motion.div
             id="mobile-nav-panel"
+            ref={panelRef}
             className="mobile-nav-panel"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}

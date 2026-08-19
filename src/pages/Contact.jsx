@@ -2,11 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { Phone, MessageCircle, Mail, MapPin, Clock, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import SectionReveal from '../components/SectionReveal.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
 import './Subpage.css';
 
 export default function Contact() {
   const { t } = useTranslation();
+  usePageMeta(t('meta.contact.title'), t('meta.contact.description'), '/contact');
   const [copied, setCopied] = useState(false);
 
   const copyNumber = async () => {
@@ -59,7 +61,7 @@ export default function Contact() {
             </SectionReveal>
 
             <SectionReveal delay={0.1}>
-              <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="card contact-channel">
+              <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="card contact-channel">
                 <span className="contact-channel-icon"><MessageCircle size={22} /></span>
                 <div>
                   <span className="contact-channel-label">{t('contact.whatsappLabel')}</span>
@@ -98,13 +100,6 @@ export default function Contact() {
               </div>
             </SectionReveal>
           </div>
-
-          <SectionReveal delay={0.03}>
-            <div className="card contact-area card-pad">
-              <span className="eyebrow">{t('about.founderRole')}</span>
-              <p>{t('about.founderName')}</p>
-            </div>
-          </SectionReveal>
 
           <SectionReveal>
             <div className="card contact-area card-pad">

@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Star, Quote, ExternalLink } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
 import testimonials from '../content/testimonials.json';
 import './Subpage.css';
 
 export default function Testimonials() {
   const { t } = useTranslation();
+  usePageMeta(t('meta.reviews.title'), t('meta.reviews.description'), '/reviews');
   return (
     <>
       <section className="subpage-hero">

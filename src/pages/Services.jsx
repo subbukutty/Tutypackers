@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Phone, Home, Briefcase, Truck, Package, Warehouse } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
 import servicesList from '../content/services.json';
 import './Subpage.css';
@@ -9,6 +10,7 @@ const ICONS = { home: Home, briefcase: Briefcase, truck: Truck, package: Package
 
 export default function Services() {
   const { t } = useTranslation();
+  usePageMeta(t('meta.services.title'), t('meta.services.description'), '/services');
   return (
     <>
       <section className="subpage-hero">

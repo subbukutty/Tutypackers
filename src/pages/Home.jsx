@@ -6,6 +6,7 @@ import SectionReveal from '../components/SectionReveal.jsx';
 import FleetCard from '../components/FleetCard.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
 import { HeroTruck } from '../components/TruckSVG.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
 import servicesList from '../content/services.json';
 import './Home.css';
@@ -44,6 +45,7 @@ const COVERAGE_MAP_SRC =
 
 export default function Home() {
   const { t } = useTranslation();
+  usePageMeta(t('meta.home.title'), t('meta.home.description'), '/');
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 80]);
   const heroOp = useTransform(scrollY, [0, 500], [1, 0.4]);
@@ -289,7 +291,7 @@ export default function Home() {
                 <Phone size={18} strokeWidth={2.4} />
                 {t('home.ctaButton')}
               </a>
-              <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-cta-wa">
+              <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-cta-wa">
                 {t('common.whatsapp')}
               </a>
             </div>

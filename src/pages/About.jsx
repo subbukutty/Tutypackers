@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
 import ceoPortrait from '../assets/ceo-portrait.jpeg';
 import truckClosedSide from '../assets/truck-closed-side.jpeg';
@@ -24,6 +25,7 @@ const GALLERY = [
 
 export default function About() {
   const { t } = useTranslation();
+  usePageMeta(t('meta.about.title'), t('meta.about.description'), '/about');
   return (
     <>
       <section className="subpage-hero">
@@ -127,7 +129,7 @@ export default function About() {
                 <Phone size={16} strokeWidth={2.4} />
                 {t('home.ctaButton')}
               </a>
-              <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer"
+              <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer"
                  className="btn btn-secondary">
                 {t('common.whatsapp')}
               </a>

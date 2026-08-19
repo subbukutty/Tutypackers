@@ -2,7 +2,7 @@
   "name": "tutypackers-website",
   "private": true,
   "version": "1.0.0",
-  "description": "Marketing site for Tuty Packers and Movers (Thoothukudi) — any vehicle size via trustable transport partners, all-India service.",
+  "description": "Marketing site for Tuty Packers and Movers (Thoothukudi) — any vehicle size via trusted transport partners, all-India service.",
   "type": "module",
   "scripts": {
     "dev": "vite",
