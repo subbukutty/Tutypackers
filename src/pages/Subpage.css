@@ -332,6 +332,7 @@
 }
 
 .card-pad { padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.contact-area { margin-bottom: 16px; }
 .contact-area p { color: var(--ink-soft); font-size: var(--fs-sm); }
 
 .map-card {

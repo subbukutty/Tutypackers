@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Phone, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import contact from '../content/contact.json';
+import ceoPortrait from '../assets/ceo-portrait.jpeg';
 import truckClosedSide from '../assets/truck-closed-side.jpeg';
 import truckCabFront from '../assets/truck-cab-front.jpeg';
 import truckOpenFront from '../assets/truck-open-front.jpeg';
@@ -31,6 +32,28 @@ export default function About() {
             <span className="eyebrow">{t('nav.about')}</span>
             <h1 className="subpage-title">{t('about.title')}</h1>
             <p className="subpage-sub">{t('about.subtitle')}</p>
+          </SectionReveal>
+        </div>
+      </section>
+
+      <section className="section section-paper">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-head">
+              <span className="eyebrow">{t('about.founderEyebrow')}</span>
+              <h2 className="section-title">{t('about.founderTitle')}</h2>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={0.08}>
+            <div className="card founder-card">
+              <img src={ceoPortrait} alt={t('about.founderName')} className="founder-photo" />
+              <div className="founder-body">
+                <strong className="founder-name">{t('about.founderName')}</strong>
+                <span className="founder-title">{t('about.founderRole')}</span>
+                <p className="founder-quote">{t('about.founderBio')}</p>
+              </div>
+            </div>
           </SectionReveal>
         </div>
       </section>

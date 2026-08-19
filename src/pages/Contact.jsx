@@ -89,6 +89,13 @@ export default function Contact() {
             </SectionReveal>
           </div>
 
+          <SectionReveal delay={0.03}>
+            <div className="card contact-area card-pad">
+              <span className="eyebrow">{t('about.founderRole')}</span>
+              <p>{t('about.founderName')}</p>
+            </div>
+          </SectionReveal>
+
           <SectionReveal>
             <div className="card contact-area card-pad">
               <span className="eyebrow">{t('contact.areaLabel')}</span>
