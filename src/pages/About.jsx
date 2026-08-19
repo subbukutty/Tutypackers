@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Phone, Mail, ShieldCheck, Truck, Wrench } from 'lucide-react';
+import { Phone, Mail, MessageCircle, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
 import contact from '../content/contact.json';
@@ -125,12 +125,13 @@ export default function About() {
               <p className="cta-sub">{t('home.ctaSubtitle')}</p>
             </div>
             <div className="cta-action">
-              <a href={`tel:${contact.phoneE164}`} className="btn btn-primary">
+              <a href={`tel:${contact.phoneE164}`} className="btn btn-primary btn-cta-phone">
                 <Phone size={16} strokeWidth={2.4} />
                 {t('home.ctaButton')}
               </a>
               <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer"
-                 className="btn btn-secondary">
+                 className="btn btn-primary btn-cta-phone">
+                <MessageCircle size={16} strokeWidth={2.4} />
                 {t('common.whatsapp')}
               </a>
             </div>

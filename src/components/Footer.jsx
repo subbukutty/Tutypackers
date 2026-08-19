@@ -64,7 +64,13 @@ export default function Footer() {
       </div>
 
       <div className="container site-footer-base">
-        <small>© {year} {t('brand.name')}. {t('footer.rights')}</small>
+        <small>
+          © {year} {t('brand.name')}. {t('footer.rights')}
+          {' '}· Designed &amp; Developed by{' '}
+          <a href="https://www.linkedin.com/in/subbukutty" target="_blank" rel="noopener noreferrer" className="footer-credit-link">
+            Subbu Kutty
+          </a>
+        </small>
         <LanguageToggle />
       </div>
     </footer>

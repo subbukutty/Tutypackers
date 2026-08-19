@@ -205,7 +205,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 32px;
-  padding: 56px 32px;
+  padding: 56px 32px 108px;
   border-radius: var(--r-xl);
   background: linear-gradient(180deg, var(--eicher-red) 0%, var(--eicher-red-deep) 100%);
   position: relative;
@@ -214,8 +214,8 @@
   max-width: var(--content-max);
 }
 @media (max-width: 600px) {
-  .cta-inner { padding: 36px 24px; margin: 48px auto; border-radius: var(--r-lg); }
-  .cta-action { flex-direction: column; align-items: stretch; width: 100%; }
+  .cta-inner { padding: 36px 24px 72px; margin: 48px auto; border-radius: var(--r-lg); }
+  .cta-action { flex-direction: column; align-items: stretch; width: 100%; margin-bottom: 12px; }
   .cta-action .btn { width: 100%; }
 }
 .cta-inner::after {
@@ -243,11 +243,10 @@
   flex-wrap: wrap;
   gap: 12px;
 }
-.btn-cta-phone { background: #fff; color: var(--eicher-red); }
-.btn-cta-phone:hover { background: var(--cream); color: var(--eicher-red-deep); }
-.btn-cta-wa {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255,255,255,0.6);
-}
-.btn-cta-wa:hover { background: rgba(255,255,255,0.1); color: #fff; }
+/* Compound selectors (not just .btn-cta-phone) so these reliably beat
+   .btn-primary's own :hover rule regardless of CSS bundle order — a plain
+   single-class .btn-cta-phone:hover was losing the "background" property to
+   .btn-primary:hover in production, leaving red-deep text on a red-deep
+   background (invisible). */
+.btn-primary.btn-cta-phone { background: #fff; color: var(--eicher-red); }
+.btn-primary.btn-cta-phone:hover { background: var(--eicher-red-deep); color: #fff; }

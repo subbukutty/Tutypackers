@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import BrandMark from './BrandMark.jsx';
+import LoadingArt from './LoadingArt.jsx';
 import './Loader.css';
 
 export default function Loader({ visible }) {
@@ -23,9 +23,10 @@ export default function Loader({ visible }) {
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <BrandMark size={88} className="loader-badge" />
+            <span className="loader-art">
+              <LoadingArt size={220} />
+            </span>
           </motion.div>
-          <p className="loader-name">{t('loader.name')}</p>
           <span className="loader-bar" aria-hidden="true">
             <span className="loader-bar-fill" />
           </span>

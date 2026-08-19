@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Phone, ArrowUpRight, ShieldCheck, BadgeCheck, Clock4, MapPin, Truck } from 'lucide-react';
+import { Phone, MessageCircle, ArrowUpRight, ShieldCheck, BadgeCheck, Clock4, MapPin, Truck } from 'lucide-react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import FleetCard from '../components/FleetCard.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
@@ -291,7 +291,8 @@ export default function Home() {
                 <Phone size={18} strokeWidth={2.4} />
                 {t('home.ctaButton')}
               </a>
-              <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-cta-wa">
+              <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-cta-phone">
+                <MessageCircle size={18} strokeWidth={2.4} />
                 {t('common.whatsapp')}
               </a>
             </div>

@@ -301,9 +301,6 @@
 @media (min-width: 720px) {
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1000px) {
-  .contact-grid { grid-template-columns: repeat(4, 1fr); }
-}
 .contact-channel-wide { grid-column: 1 / -1; }
 .contact-channel {
   display: flex;

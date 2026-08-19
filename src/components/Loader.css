@@ -10,15 +10,12 @@
   background: var(--cream);
 }
 .loader-mark { display: inline-flex; }
-.loader-badge { box-shadow: 0 16px 36px rgba(200, 16, 46, 0.28); }
-.loader-name {
-  font-weight: 700;
-  font-size: var(--fs-xl);
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  text-align: center;
+.loader-art {
+  display: inline-flex;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
 }
-
 .loader-bar {
   position: relative;
   width: 140px;

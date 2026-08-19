@@ -75,3 +75,5 @@
   background: var(--eicher-red); color: #fff;
 }
 .site-footer-base .lang-divider { background: rgba(255,255,255,0.1); }
+.footer-credit-link { color: inherit; font-weight: 600; transition: color .2s ease; }
+.footer-credit-link:hover { color: var(--eicher-red); }

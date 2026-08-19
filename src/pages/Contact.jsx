@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Copy, Check } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Clock, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import SectionReveal from '../components/SectionReveal.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
@@ -51,16 +51,6 @@ export default function Contact() {
 
           <div className="contact-grid">
             <SectionReveal delay={0.05}>
-              <div className="card contact-channel">
-                <span className="contact-channel-icon"><Phone size={22} /></span>
-                <div>
-                  <span className="contact-channel-label">{t('footer.call')}</span>
-                  <strong>{contact.phone}</strong>
-                </div>
-              </div>
-            </SectionReveal>
-
-            <SectionReveal delay={0.1}>
               <a href={`${contact.whatsapp}?text=${encodeURIComponent(t('common.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="card contact-channel">
                 <span className="contact-channel-icon"><MessageCircle size={22} /></span>
                 <div>
@@ -70,7 +60,7 @@ export default function Contact() {
               </a>
             </SectionReveal>
 
-            <SectionReveal delay={0.15}>
+            <SectionReveal delay={0.1}>
               <a href={`mailto:${contact.email}`} className="card contact-channel">
                 <span className="contact-channel-icon"><Mail size={22} /></span>
                 <div>
@@ -80,7 +70,7 @@ export default function Contact() {
               </a>
             </SectionReveal>
 
-            <SectionReveal delay={0.2}>
+            <SectionReveal delay={0.15} className="contact-channel-wide">
               <div className="card contact-channel">
                 <span className="contact-channel-icon"><MapPin size={22} /></span>
                 <div>
@@ -90,8 +80,8 @@ export default function Contact() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.25}>
-              <div className="card contact-channel contact-channel-wide">
+            <SectionReveal delay={0.2} className="contact-channel-wide">
+              <div className="card contact-channel">
                 <span className="contact-channel-icon"><Clock size={22} /></span>
                 <div>
                   <span className="contact-channel-label">{t('contact.hoursLabel')}</span>
