@@ -49,16 +49,6 @@ export default function Contact() {
 
           <div className="contact-grid">
             <SectionReveal delay={0.05}>
-              <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="card contact-channel">
-                <span className="contact-channel-icon"><MessageCircle size={22} /></span>
-                <div>
-                  <span className="contact-channel-label">{t('contact.whatsappLabel')}</span>
-                  <strong>{t('contact.whatsapp')}</strong>
-                </div>
-              </a>
-            </SectionReveal>
-
-            <SectionReveal delay={0.1}>
               <div className="card contact-channel">
                 <span className="contact-channel-icon"><Phone size={22} /></span>
                 <div>
@@ -68,14 +58,24 @@ export default function Contact() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.15}>
-              <div className="card contact-channel">
-                <span className="contact-channel-icon"><Clock size={22} /></span>
+            <SectionReveal delay={0.1}>
+              <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="card contact-channel">
+                <span className="contact-channel-icon"><MessageCircle size={22} /></span>
                 <div>
-                  <span className="contact-channel-label">{t('contact.hoursLabel')}</span>
-                  <strong>{t('contact.hours')}</strong>
+                  <span className="contact-channel-label">{t('contact.whatsappLabel')}</span>
+                  <strong>{t('contact.whatsapp')}</strong>
                 </div>
-              </div>
+              </a>
+            </SectionReveal>
+
+            <SectionReveal delay={0.15}>
+              <a href={`mailto:${contact.email}`} className="card contact-channel">
+                <span className="contact-channel-icon"><Mail size={22} /></span>
+                <div>
+                  <span className="contact-channel-label">{t('contact.emailLabel')}</span>
+                  <strong>{contact.email}</strong>
+                </div>
+              </a>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
@@ -89,13 +89,13 @@ export default function Contact() {
             </SectionReveal>
 
             <SectionReveal delay={0.25}>
-              <a href={`mailto:${contact.email}`} className="card contact-channel contact-channel-wide">
-                <span className="contact-channel-icon"><Mail size={22} /></span>
+              <div className="card contact-channel contact-channel-wide">
+                <span className="contact-channel-icon"><Clock size={22} /></span>
                 <div>
-                  <span className="contact-channel-label">{t('contact.emailLabel')}</span>
-                  <strong>{contact.email}</strong>
+                  <span className="contact-channel-label">{t('contact.hoursLabel')}</span>
+                  <strong>{t('contact.hours')}</strong>
                 </div>
-              </a>
+              </div>
             </SectionReveal>
           </div>
 
