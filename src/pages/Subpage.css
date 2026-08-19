@@ -4,6 +4,9 @@
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
   border-bottom: 1px solid var(--line);
 }
+@media (max-width: 600px) {
+  .subpage-hero { padding: calc(var(--header-h) + 40px) 0 40px; }
+}
 .subpage-title {
   margin-top: 16px;
   font-size: clamp(36px, 5vw, 60px);
@@ -14,6 +17,75 @@
   font-size: var(--fs-md);
   color: var(--ink-soft);
   max-width: 640px;
+}
+
+/* ----- Rating badge ----- */
+.rating-badge {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--r-md);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.rating-badge:hover { border-color: var(--ink-mute); transform: translateY(-1px); }
+.rating-badge svg { color: #f5a623; }
+.rating-badge strong { font-size: var(--fs-md); }
+.rating-badge span { color: var(--ink-soft); }
+
+/* ----- Testimonials ----- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 720px) {
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1080px) {
+  .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.testimonial-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+.testimonial-quote-icon { color: var(--eicher-red); opacity: 0.85; }
+.testimonial-quote {
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+.testimonial-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.testimonial-name { display: block; font-size: var(--fs-sm); color: var(--ink); }
+.testimonial-meta { display: block; font-size: var(--fs-xs); color: var(--ink-mute); margin-top: 2px; }
+.testimonial-badge {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.testimonials-foot {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 /* ----- Services list ----- */
@@ -94,6 +166,10 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 28px;
+}
+@media (max-width: 480px) {
+  .contact-call { padding: 28px 20px; }
+  .contact-number { padding: 20px 24px; width: 100%; }
 }
 .contact-label {
   font-size: var(--fs-xs);
@@ -180,3 +256,20 @@
 
 .card-pad { padding: 28px; display: flex; flex-direction: column; gap: 10px; }
 .contact-area p { color: var(--ink-soft); font-size: var(--fs-sm); }
+
+.map-card {
+  margin-top: 16px;
+  padding: 12px;
+  overflow: hidden;
+}
+.map-card-label { display: block; margin: 8px 0 12px 8px; }
+.map-frame {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: calc(var(--r-md) - 4px);
+}
+@media (max-width: 600px) {
+  .map-frame { height: 260px; }
+}

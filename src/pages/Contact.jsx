@@ -24,7 +24,7 @@ export default function Contact() {
       <section className="subpage-hero">
         <div className="container">
           <SectionReveal>
-            <span className="eyebrow">Contact</span>
+            <span className="eyebrow">{t('nav.contact')}</span>
             <h1 className="subpage-title">{t('contact.title')}</h1>
             <p className="subpage-sub">{t('contact.subtitle')}</p>
           </SectionReveal>
@@ -62,7 +62,7 @@ export default function Contact() {
               <div className="card contact-channel">
                 <span className="contact-channel-icon"><Phone size={22} /></span>
                 <div>
-                  <span className="contact-channel-label">Call</span>
+                  <span className="contact-channel-label">{t('footer.call')}</span>
                   <strong>{contact.phone}</strong>
                 </div>
               </div>
@@ -93,6 +93,20 @@ export default function Contact() {
             <div className="card contact-area card-pad">
               <span className="eyebrow">{t('contact.areaLabel')}</span>
               <p>{t('contact.area')}</p>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={0.05}>
+            <div className="card map-card">
+              <span className="eyebrow map-card-label">{t('contact.mapLabel')}</span>
+              <iframe
+                className="map-frame"
+                title="Tuty Packers and Movers — headquarters map"
+                src={`https://www.google.com/maps?q=${contact.hq.lat},${contact.hq.lng}&z=16&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </SectionReveal>
         </div>

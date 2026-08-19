@@ -2,6 +2,12 @@
   "phone": "+91 80566 86614",
   "phoneE164": "+918056686614",
   "whatsapp": "https://wa.me/918056686614",
-  "address": "Thoothukudi, Tamil Nadu — 628001",
-  "hours": "24 hours · 7 days"
+  "address": "Briyant Nagar, 7th Street, Thoothukudi — 628008",
+  "hours": "24 hours · 7 days",
+  "hq": {
+    "lat": 8.790198216536902,
+    "lng": 78.13092302530737
+  },
+  "googleRating": "4.4",
+  "googleReviewsUrl": "https://www.google.com/maps/place/Tuty+Packers+and+Movers/@8.7955074,78.1287646,863m/data=!3m1!1e3!4m8!3m7!1s0x3b03efc739b89eef:0x6dde2ee4b1778767!8m2!3d8.7955074!4d78.1313395!9m1!1b1!16s%2Fg%2F11f38551sg"
 }

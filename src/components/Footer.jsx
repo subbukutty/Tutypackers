@@ -41,6 +41,7 @@ export default function Footer() {
           <h4 className="footer-h">{t('footer.company')}</h4>
           <ul className="footer-list">
             <li><Link to="/about">{t('nav.about')}</Link></li>
+            <li><Link to="/reviews">{t('nav.reviews')}</Link></li>
             <li><Link to="/contact">{t('nav.contact')}</Link></li>
           </ul>
         </div>
@@ -54,11 +55,11 @@ export default function Footer() {
             </li>
             <li>
               <MapPin size={14} />
-              <span>{contact.address}</span>
+              <span>{t('contact.address')}</span>
             </li>
             <li>
               <Clock size={14} />
-              <span>{contact.hours}</span>
+              <span>{t('contact.hours')}</span>
             </li>
           </ul>
         </div>

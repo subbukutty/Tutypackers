@@ -14,7 +14,7 @@ export default function Services() {
       <section className="subpage-hero">
         <div className="container">
           <SectionReveal>
-            <span className="eyebrow">Services</span>
+            <span className="eyebrow">{t('nav.services')}</span>
             <h1 className="subpage-title">{t('services.title')}</h1>
             <p className="subpage-sub">{t('services.subtitle')}</p>
           </SectionReveal>

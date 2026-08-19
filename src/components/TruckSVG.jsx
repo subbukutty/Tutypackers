@@ -3,7 +3,6 @@
 
 const baseProps = {
   width: '100%',
-  height: 'auto',
   viewBox: '0 0 240 120',
   fill: 'none',
   xmlns: 'http://www.w3.org/2000/svg',
@@ -17,12 +16,21 @@ export function TruckOpen({ accent = 'var(--eicher-red)' }) {
       <rect x="14" y="40" width="56" height="46" rx="3" fill="#fff" stroke="var(--ink)" strokeWidth="2"/>
       <rect x="22" y="48" width="22" height="18" rx="2" fill="var(--ink-soft)"/>
       <line x1="48" y1="48" x2="48" y2="66" stroke="#fff" strokeWidth="1.5"/>
-      {/* Open flatbed */}
+      {/* Open flatbed rails */}
       <rect x="70" y="46" width="120" height="40" stroke={accent} strokeWidth="2" fill="#fdfaf3"/>
-      {/* Cargo crates on bed */}
-      <rect x="76" y="22" width="28" height="24" fill="#fff" stroke={accent} strokeWidth="2"/>
-      <rect x="108" y="14" width="32" height="32" fill="#fff" stroke={accent} strokeWidth="2"/>
-      <rect x="144" y="22" width="40" height="24" fill="#fff" stroke={accent} strokeWidth="2"/>
+      {/* Tarpaulin sheet draped over the load, cinched down at the sides */}
+      <path
+        d="M76,46 C80,24 92,14 100,14 C104,14 106,18 108,24 C110,16 118,8 128,8 C140,8 146,16 146,24 C150,16 160,14 166,14 C176,14 182,24 184,46 Z"
+        fill="#EAE0C8" stroke={accent} strokeWidth="2" strokeLinejoin="round"
+      />
+      {/* Fold lines for fabric texture */}
+      <path d="M92,40 C96,28 104,20 110,18" fill="none" stroke={accent} strokeWidth="1" opacity=".3"/>
+      <path d="M130,38 C134,26 142,18 150,16" fill="none" stroke={accent} strokeWidth="1" opacity=".3"/>
+      {/* Rope lacing cinching the sheet to the flatbed */}
+      <path
+        d="M76,86 L88,46 L100,86 L112,46 L124,86 L136,46 L148,86 L160,46 L172,86 L184,46"
+        fill="none" stroke="var(--ink)" strokeWidth="1.2" opacity=".35"
+      />
       {/* Wheels */}
       <circle cx="32" cy="92" r="10" fill="#1a1a1a"/>
       <circle cx="32" cy="92" r="4" fill="#fff"/>

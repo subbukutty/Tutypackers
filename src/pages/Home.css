@@ -54,6 +54,10 @@
   gap: 12px;
   margin-top: 28px;
 }
+@media (max-width: 480px) {
+  .hero-cta-row { flex-direction: column; align-items: stretch; width: 100%; }
+  .hero-cta-row .btn { width: 100%; }
+}
 .hero-meta-row {
   margin-top: 36px;
   display: flex;
@@ -144,6 +148,23 @@
   border-color: var(--ink);
 }
 
+.local-area-grid { margin-bottom: 28px; }
+
+.map-card {
+  padding: 12px;
+  overflow: hidden;
+}
+.map-frame {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: calc(var(--r-md) - 4px);
+}
+@media (max-width: 600px) {
+  .map-frame { height: 260px; }
+}
+
 /* ---------------- Why cards ---------------- */
 .why-card {
   background: var(--paper);
@@ -191,6 +212,11 @@
   overflow: hidden;
   margin: 80px auto;
   max-width: var(--content-max);
+}
+@media (max-width: 600px) {
+  .cta-inner { padding: 36px 24px; margin: 48px auto; border-radius: var(--r-lg); }
+  .cta-action { flex-direction: column; align-items: stretch; width: 100%; }
+  .cta-action .btn { width: 100%; }
 }
 .cta-inner::after {
   content: "";

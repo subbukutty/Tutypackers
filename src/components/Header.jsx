@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 import LanguageToggle from './LanguageToggle.jsx';
-import { Phone } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import contact from '../content/contact.json';
 import './Header.css';
 
 export default function Header() {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,10 +23,24 @@ export default function Header() {
   useEffect(() => {
     // Close any mobile menu by ensuring body scroll resets when route changes
     window.scrollTo({ top: 0, behavior: 'instant' });
+    setMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  const navItems = [
+    { to: '/', key: 'nav.home', end: true },
+    { to: '/services', key: 'nav.services' },
+    { to: '/about', key: 'nav.about' },
+    { to: '/reviews', key: 'nav.reviews' },
+    { to: '/contact', key: 'nav.contact' },
+  ];
+
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
+    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${menuOpen ? 'is-menu-open' : ''}`}>
       <div className="container site-header-inner">
         <Link to="/" className="brand" aria-label="Tuty Packers — Home">
           <span className="brand-mark" aria-hidden="true">
@@ -39,28 +55,72 @@ export default function Header() {
         </Link>
 
         <nav className="site-nav" aria-label="Primary">
-          <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}>
-            {t('nav.home')}
-          </NavLink>
-          <NavLink to="/services" className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}>
-            {t('nav.services')}
-          </NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}>
-            {t('nav.about')}
-          </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}>
-            {t('nav.contact')}
-          </NavLink>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}
+            >
+              {t(item.key)}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="site-actions">
-          <LanguageToggle />
+          <span className="site-actions-desktop">
+            <LanguageToggle />
+          </span>
           <a href={`tel:${contact.phoneE164}`} className="btn btn-primary btn-sm header-cta">
             <Phone size={16} strokeWidth={2.4} />
             <span className="header-cta-label">{t('common.callNow')}</span>
           </a>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav-panel"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            id="mobile-nav-panel"
+            className="mobile-nav-panel"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <nav className="mobile-nav-links" aria-label="Mobile">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.end}
+                  className={({ isActive }) => isActive ? 'mobile-nav-link is-active' : 'mobile-nav-link'}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t(item.key)}
+                </NavLink>
+              ))}
+            </nav>
+            <div className="mobile-nav-foot">
+              <LanguageToggle />
+              <a href={`tel:${contact.phoneE164}`} className="btn btn-primary">
+                <Phone size={16} strokeWidth={2.4} />
+                {t('common.callNow')}
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

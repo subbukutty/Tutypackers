@@ -11,7 +11,7 @@ export default function About() {
       <section className="subpage-hero">
         <div className="container">
           <SectionReveal>
-            <span className="eyebrow">About</span>
+            <span className="eyebrow">{t('nav.about')}</span>
             <h1 className="subpage-title">{t('about.title')}</h1>
             <p className="subpage-sub">{t('about.subtitle')}</p>
           </SectionReveal>

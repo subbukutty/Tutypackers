@@ -11,14 +11,26 @@ import servicesList from '../content/services.json';
 import './Home.css';
 
 const FLEET_FIELDS = ['open', 'closed'];
-const STATES = [
-  { key: 'tn', label: 'Tamil Nadu', primary: true },
-  { key: 'kl', label: 'Kerala' },
-  { key: 'ka', label: 'Karnataka' },
-  { key: 'ap', label: 'Andhra Pradesh' },
-  { key: 'ts', label: 'Telangana · Hyderabad' },
-  { key: 'all', label: 'Pan-India', primary: true },
+const STATE_KEYS = [
+  { key: 'tn', primary: true },
+  { key: 'kl' },
+  { key: 'ka' },
+  { key: 'ap' },
+  { key: 'ts' },
+  { key: 'all', primary: true },
 ];
+const LOCAL_TOWN_KEYS = [
+  'tiruchendur',
+  'vilathikulam',
+  'ettayapuram',
+  'eral',
+  'kurumbur',
+  'nazareth',
+  'kayalpattinam',
+  'sawyerpuram',
+];
+const COVERAGE_MAP_SRC =
+  `https://www.google.com/maps?q=${contact.hq.lat},${contact.hq.lng}&z=10&output=embed`;
 
 export default function Home() {
   const { t } = useTranslation();
@@ -86,7 +98,7 @@ export default function Home() {
           >
             <span><ShieldCheck size={14} /> {t('common.headquarters')}</span>
             <span><Clock4 size={14} /> {t('common.open24x7')}</span>
-            <span><Truck size={14} /> 100% Eicher fleet</span>
+            <span><Truck size={14} /> {t('common.eicherFleet')}</span>
           </motion.div>
         </div>
       </section>
@@ -96,7 +108,7 @@ export default function Home() {
         <div className="container">
           <SectionReveal>
             <div className="section-head">
-              <span className="eyebrow">Fleet</span>
+              <span className="eyebrow">{t('home.fleetEyebrow')}</span>
               <h2 className="section-title">{t('home.fleetTitle')}</h2>
               <p className="section-subtitle">{t('home.fleetSubtitle')}</p>
             </div>
@@ -107,21 +119,8 @@ export default function Home() {
               <FleetCard
                 key={kind}
                 kind={kind}
-                titleKey={
-                  kind === 'open' ? 'Eicher Open Body · Tarpaulin Sheet' :
-                  'Eicher Closed Container'
-                }
-                body={
-                  kind === 'open' ? [
-                    'Open-body Eicher fitted with a tarpaulin sheet as standard.',
-                    'Sheet-on cover protects furniture from rain, dust and sun on short hauls.',
-                    'Quick to load — best for same-day and short-distance moves.',
-                  ] : [
-                    'Fully enclosed container body — dust, rain and theft resistant.',
-                    'Default for long hauls and delicate loads (electronics, antiques, glass).',
-                    'Lockable rear door; cargo strapped and padded for the run.',
-                  ]
-                }
+                titleKey={t(`home.fleetCards.${kind}.title`)}
+                body={t(`home.fleetCards.${kind}.points`, { returnObjects: true })}
               />
             ))}
             {/* Empty third grid cell keeps the two cards visually centred (single card on each side) */}
@@ -135,7 +134,7 @@ export default function Home() {
         <div className="container">
           <SectionReveal>
             <div className="section-head">
-              <span className="eyebrow">Services</span>
+              <span className="eyebrow">{t('nav.services')}</span>
               <h2 className="section-title">{t('home.servicesTitle')}</h2>
               <p className="section-subtitle">{t('home.servicesSubtitle')}</p>
             </div>
@@ -167,19 +166,53 @@ export default function Home() {
         <div className="container">
           <SectionReveal>
             <div className="section-head">
-              <span className="eyebrow"><MapPin size={12} /> Coverage</span>
+              <span className="eyebrow"><MapPin size={12} /> {t('home.areaEyebrow')}</span>
               <h2 className="section-title">{t('home.areaTitle')}</h2>
               <p className="section-subtitle">{t('home.areaSubtitle')}</p>
             </div>
           </SectionReveal>
 
           <div className="area-grid">
-            {STATES.map((s) => (
-              <SectionReveal key={s.key} delay={0.04 * STATES.indexOf(s)}>
-                <div className={`area-tile ${s.primary ? 'is-primary' : ''}`}>{s.label}</div>
+            {STATE_KEYS.map((s, idx) => (
+              <SectionReveal key={s.key} delay={0.04 * idx}>
+                <div className={`area-tile ${s.primary ? 'is-primary' : ''}`}>{t(`home.states.${s.key}`)}</div>
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ---------------- LOCAL SHIFTING + MAP ---------------- */}
+      <section className="section section-paper">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-head">
+              <span className="eyebrow"><MapPin size={12} /> {t('home.mapLabel')}</span>
+              <h2 className="section-title">{t('home.localTitle')}</h2>
+              <p className="section-subtitle">{t('home.localSubtitle')}</p>
+            </div>
+          </SectionReveal>
+
+          <div className="area-grid local-area-grid">
+            {LOCAL_TOWN_KEYS.map((town, idx) => (
+              <SectionReveal key={town} delay={0.04 * idx}>
+                <div className="area-tile">{t(`home.localTowns.${town}`)}</div>
+              </SectionReveal>
+            ))}
+          </div>
+
+          <SectionReveal delay={0.1}>
+            <div className="card map-card">
+              <iframe
+                className="map-frame"
+                title="Tuty Packers and Movers — service coverage map"
+                src={COVERAGE_MAP_SRC}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </SectionReveal>
         </div>
       </section>
 
@@ -188,7 +221,7 @@ export default function Home() {
         <div className="container">
           <SectionReveal>
             <div className="section-head">
-              <span className="eyebrow">Why us</span>
+              <span className="eyebrow">{t('home.whyEyebrow')}</span>
               <h2 className="section-title">{t('home.whyTitle')}</h2>
               <p className="section-subtitle">{t('home.whySubtitle')}</p>
             </div>

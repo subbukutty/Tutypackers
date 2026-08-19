@@ -8,6 +8,7 @@
     "home": "Home",
     "services": "Services",
     "about": "About",
+    "reviews": "Reviews",
     "contact": "Contact"
   },
   "common": {
@@ -18,7 +19,8 @@
     "available": "Available on request",
     "learnMore": "Learn more",
     "open24x7": "Dispatch 24×7",
-    "headquarters": "Headquartered in Thoothukudi"
+    "headquarters": "Headquartered in Thoothukudi",
+    "eicherFleet": "100% Eicher fleet"
   },
   "hero": {
     "eyebrow": "Packers & Movers · Thoothukudi",
@@ -28,12 +30,54 @@
     "secondaryCta": "View services"
   },
   "home": {
+    "fleetEyebrow": "Fleet",
     "fleetTitle": "Our fleet is 100% Eicher.",
     "fleetSubtitle": "Two configurations, every Eicher. Open body with fitted tarpaulin sheet for short hauls, closed container for long hauls and delicate loads.",
+    "fleetCards": {
+      "open": {
+        "title": "Eicher Open Body · Tarpaulin Sheet",
+        "points": [
+          "Open-body Eicher fitted with a tarpaulin sheet as standard.",
+          "Sheet-on cover protects furniture from rain, dust and sun on short hauls.",
+          "Quick to load — best for same-day and short-distance moves."
+        ]
+      },
+      "closed": {
+        "title": "Eicher Closed Container",
+        "points": [
+          "Fully enclosed container body — dust, rain and theft resistant.",
+          "Default for long hauls and delicate loads (electronics, antiques, glass).",
+          "Lockable rear door; cargo strapped and padded for the run."
+        ]
+      }
+    },
     "servicesTitle": "What we move.",
     "servicesSubtitle": "From a single carton to an entire office, we handle the heavy lifting end-to-end.",
+    "areaEyebrow": "Coverage",
     "areaTitle": "Where we go.",
     "areaSubtitle": "Out of Thoothukudi, into anywhere in India.",
+    "states": {
+      "tn": "Tamil Nadu",
+      "kl": "Kerala",
+      "ka": "Karnataka",
+      "ap": "Andhra Pradesh",
+      "ts": "Telangana · Hyderabad",
+      "all": "Pan-India"
+    },
+    "localTitle": "Local shifting, home turf.",
+    "localSubtitle": "Door-to-door household and office shifting across Thoothukudi district.",
+    "mapLabel": "Coverage map",
+    "localTowns": {
+      "tiruchendur": "Tiruchendur",
+      "vilathikulam": "Vilathikulam",
+      "ettayapuram": "Ettayapuram",
+      "eral": "Eral",
+      "kurumbur": "Kurumbur",
+      "nazareth": "Nazareth",
+      "kayalpattinam": "Kayalpattinam",
+      "sawyerpuram": "Sawyerpuram"
+    },
+    "whyEyebrow": "Why us",
     "whyTitle": "Why Tuty Packers.",
     "whySubtitle": "Three reasons customers call us back.",
     "why1Title": "Eicher-only fleet",
@@ -77,6 +121,16 @@
     "valuesTitle": "How we work",
     "valuesBody": "Upfront quotes. Honest ETAs. Real people on the phone at 2am when a long-haul needs to roll. We don't subcontract — our drivers are our drivers."
   },
+  "testimonials": {
+    "title": "Customer thoughts",
+    "subtitle": "A few real reviews from our Google Business profile, picked out for you.",
+    "ratingLabel": "on Google",
+    "sourceLabel": "Google review",
+    "viewAll": "See all reviews on Google",
+    "ctaTitle": "Moved by us? Tell us about it.",
+    "ctaSubtitle": "A quick review helps the next family or business find a mover they can trust.",
+    "ctaButton": "Write a Google review"
+  },
   "contact": {
     "title": "One call does it all.",
     "subtitle": "Estimate, schedule, dispatch — all on one line.",
@@ -88,9 +142,10 @@
     "hoursLabel": "Dispatch hours",
     "hours": "24 hours · 7 days",
     "addressLabel": "Headquarters",
-    "address": "Thoothukudi, Tamil Nadu — 628001",
+    "address": "Briyant Nagar, 7th Street, Thoothukudi — 628008",
     "areaLabel": "Service area",
-    "area": "All-India. Daily service across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telangana."
+    "area": "All-India. Daily service across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telangana.",
+    "mapLabel": "Find us"
   },
   "footer": {
     "tagline": "Packers & Movers from Thoothukudi — moving you anywhere in India.",
